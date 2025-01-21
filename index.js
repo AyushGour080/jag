@@ -56,13 +56,17 @@ document.getElementById('right').addEventListener('click', moveRight);
 
 
 
-function addToCart() {
+function openCart() {
   if(document.getElementById("dish").style.display === "flex")
       cancel();
     
   document.getElementById("cart").style.display = "flex";
   window.scrollTo(0, 0);
   document.body.classList.add("freeze-scroll");
+}
+function addToCart()
+{
+  
 }
 
 
@@ -324,7 +328,7 @@ image: "img/unsplash_MqT0asuoIcU.png",
                <div>${cardData[cardIndex].time}</div>
               </div>
           
-          <div><img src="img/plus-symbol-in-a-rounded-black-square.png" id="addToCart" onclick="addToCart()"></div>
+          <div class="add"><img src="img/plus-symbol-in-a-rounded-black-square.png" id="addToCart" onclick="addToCart()"></div>
 
         </div>
       </div>
@@ -378,7 +382,7 @@ function renderFrame() {
                         <div><img src="img/star.png" id="star"> ${cardData[i].rating}</div>
                         <div>${cardData[i].time}</div>
                     </div>
-                    <div><img src="img/plus.png" id="addToCart"></div>
+                    <div class="add"><img src="img/plus-symbol-in-a-rounded-black-square.png" id="addToCart" onclick="addToCart()"></div>
                 </div>
             </div>
         `;

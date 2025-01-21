@@ -66,7 +66,7 @@
                     <input type="text" placeholder="Paste a URL" id="image">
                 </p>
             </div>
-            <div>
+            <div class="dish-buttons">
                 <button class="btn-cancel" id="cancelDishRequest" onclick="cancel()">cancel</button>
                 <button class="btn-submit" id="submitDishRequest" onclick="handleSubmit()">Submit request</button>
             </div>
@@ -82,7 +82,7 @@
     <nav class="navbar">
         <div class="inner-nav">
             
-            <a href="https://www.joshtechnologygroup.com/" target="_blank"><img src="img/JTGeats.png" id="logo"></a>
+            <div class="logo-container"><a href="https://www.joshtechnologygroup.com/" target="_blank"><img src="img/JTGeats.png" id="logo"></a></div>
             <div class="nav-content">
                 <div class="menu-item">
                     <a href="/home" target="_blank"> <span>Home</span> </a> 
@@ -151,14 +151,17 @@
         <div class="slider-container">
             <p class="popular-item"><b>Popular Items</b></p>
             <div class="slider-wrapper">
-                <span class="left-slide"><img src="img/play-sign.png" id="left"></span>
+                <span class="left-slide"><img src="img/arrow (3).png"  id="left"></span>
                 <div class="slider" ></div>
-                <span class="right-slide"><img src="img/play-sign (1).png" id="right"></span>
+                <span class="right-slide"><img src="img/arrow.png" id="right"></span>
             </div>
         </div>
-        <button class="request-dish">Request a Dish</button>
-    
+        <div class="dish-btn-container">
+           <button class="btn" id="dishRequest" onclick="handleRequest()"><b>Request a Dish</b></button>
+        </div>
     </div>
+
+    
 
 </section>
 <!-- kitchen-section -->
@@ -221,7 +224,7 @@
                         <textarea placeholder="Your message"></textarea>
                         <div>
 
-                            <button class="btn" style="height: 60px;">submit</button>
+                            <button class="btn-submit-contact" ">submit</button>
                         </div>
                 </div>
             </div>
