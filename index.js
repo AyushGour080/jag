@@ -1,57 +1,25 @@
-// let close = document.getElementById("closeCart");
-// let dishRequest = document.getElementById("dishRequest");
-// let cancel = document.getElementById("cancelDishRequest");
-// let submit = document.getElementById("submitDishRequest");
-// let add = document.getElementById("addToCart");
-
-
-// const cardData = [
-//   { image: 'img/unsplash_MqT0asuoIcU.png', name: 'Item 1', price: '$10', rating: '4.5', time: '2d' },
-//   { image: 'img/pexels-omar-mahmood-106343 1.png', name: 'Item 2', price: '$15', rating: '4.8', time: '1d' },
-//   { image: 'img/pexels-mumma-oyens-8799602 1.png', name: 'Item 3', price: '$12', rating: '4.2', time: '3d' },
-//   { image: 'img/unsplash_MqT0asuoIcU.png', name: 'Item 4', price: '$18', rating: '4.7', time: '1d' },
-//   { image: 'img/pexels-omar-mahmood-106343 1.png', name: 'Item 5', price: '$20', rating: '4.9', time: '5h' },
-//   { image: 'img/pexels-mumma-oyens-8799602 1.png', name: 'Item 6', price: '$25', rating: '4.3', time: '7h' },
-//   // Add more data as needed
-// ];
-
-// let currentFrame = 0;
-// const cardsPerFrame = 3;
-// const totalFrames = Math.ceil(cardData.length / cardsPerFrame);
-// function renderSlider() {
-//   const sliderWrapper = document.querySelector('.slider');
-//   const slider = document.createElement('div');
-//   slider.className = 'slider';
-//   const frame = createSliderFrame(currentFrame * cardsPerFrame);
-//   slider.appendChild(frame);
-//   // sliderWrapper.innerHTML = '';
-//   sliderWrapper.appendChild(slider);
-// }
 
 
 document.getElementById('left').addEventListener('click', moveLeft);
 document.getElementById('right').addEventListener('click', moveRight);
 
-// let scrollContainer = document.querySelector(".slider");
-// let left = document.getElementById("left");
-// let right = document.getElementById("right");
-
-// scrollContainer.addEventListener("wheel", () => {
-//   evt.preventDefault();
-//   scrollContainer.scrollLeft += evt.deltaY;
-// });
 
 
-// left.addEventListener("click", () => {
-//   scrollContainer.scrollLeft -= 933;
-// });
+let cartSize = 0;
+
+function checkCart(){
+
+  if(cartSize!=0)
+    {
+         cartSize+=1;
+    }
+    else{
+      
+    }
 
 
-// right.addEventListener("click", () => {
-//   scrollContainer.scrollLeft += 933;
-// });
 
-
+}
 
 
 
@@ -382,7 +350,7 @@ function renderFrame() {
                         <div><img src="img/star.png" id="star"> ${cardData[i].rating}</div>
                         <div>${cardData[i].time}</div>
                     </div>
-                    <div class="add"><img src="img/plus-symbol-in-a-rounded-black-square.png" id="addToCart" onclick="addToCart()"></div>
+                    <div class="add" onclick="checkSize()"><img src="img/plus-symbol-in-a-rounded-black-square.png" id="addToCart" onclick="addToCart()"></div>
                 </div>
             </div>
         `;
