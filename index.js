@@ -1,5 +1,23 @@
-document.getElementById("left").addEventListener("click", moveLeft);
-document.getElementById("right").addEventListener("click", moveRight);
+// document.getElementById("left").addEventListener("click", moveLeft);
+// document.getElementById("right").addEventListener("click", moveRight);
+
+const scrollableDiv = document.getElementById("slider-content");
+const scrollLeftButton = document.getElementById("left");
+const scrollRightButton = document.getElementById("right");
+scrollableDiv.offsetWidth;
+scrollLeftButton.addEventListener("click", () => {
+  scrollableDiv.scrollBy({
+    left: -scrollableDiv.offsetWidth * 0.349,
+    behavior: "smooth",
+  });
+});
+
+scrollRightButton.addEventListener("click", () => {
+  scrollableDiv.scrollBy({
+    left: scrollableDiv.offsetWidth * 0.349,
+    behavior: "smooth",
+  });
+});
 
 let cartSize = 0;
 
@@ -159,54 +177,47 @@ function createSliderFrame(startIndex) {
   const sliderFrame = document.createElement("div");
   sliderFrame.className = "slider-frame";
 
-  for (
-    let i = startIndex;
-    i < startIndex + cardsPerFrame && i < cardData.length;
-    i++
-  ) {
+  cardData.map((itemData, index) => {
     const card = document.createElement("div");
     card.className = "card";
     card.innerHTML = `
-      <div class="card-img-container">
-        <img src="${cardData[i].image}" alt="${cardData[i].name}">
+    <div class="card-img-container">
+      <img src="${itemData.image}" alt="${itemData.name}">
+    </div>
+    <div class="product-card-detail">
+      <div class="price">
+        <p>${itemData.name}</p>
+        <p>${itemData.price}</p>
       </div>
-      <div class="product-card-detail">
-        <div class="price">
-          <p>${cardData[i].name}</p>
-          <p>${cardData[i].price}</p>
+      <div class="rating-add">
+        <div class="rating-box">
+          <div><img src="img/star.png" id="star"> ${itemData.rating}</div>
+          <div>${itemData.time}</div>
         </div>
-        <div class="rating-add">
-          <div class="rating-box">
-            <div><img src="img/star.png" id="star"> ${cardData[i].rating}</div>
-            <div>${cardData[i].time}</div>
-          </div>
-          <div><img src="img/plus-symbol-in-a-rounded-black-square.png" id="addToCart" onclick="addToCart()"></div>
-        </div>
+        <div><img src="img/plus-symbol-in-a-rounded-black-square.png" id="addToCart" onclick="addToCart()"></div>
       </div>
-    `;
+    </div>
+  `;
     sliderFrame.appendChild(card);
-  }
+  });
   return sliderFrame;
 }
 
 function moveLeft() {
-  if (currentFrame > 0) {
-    currentFrame--;
-    renderSlider();
-  }
+  const overflowDiv = document.getElementById("slider-container");
+
+  overflowDiv.scrollBy({ left: -200, behavior: "smooth" });
 }
 
 function moveRight() {
-  if (currentFrame < totalFrames - 1) {
-    currentFrame++;
-    renderSlider();
-  }
+  const overflowDiv = document.getElementById("slider-container");
+
+  console.log("Sd");
+  overflowDiv.scrollBy({ left: +200, behavior: "smooth" });
 }
 
 function renderCards() {
   const framesContainer = document.getElementById("frames-container");
-
-  console.log("asdfnlkamlk");
 
   const cardList = [
     {
@@ -281,6 +292,33 @@ function renderCards() {
   });
 }
 
+function renderSlider() {
+  const sliderDiv = document.getElementById("slider-content");
+
+  cardData.map((itemData, index) => {
+    const card = document.createElement("div");
+    card.className = "slider-card";
+    card.innerHTML = `
+    <div class="card-img-container">
+      <img src="${itemData.image}" alt="${itemData.name}">
+    </div>
+    <div class="product-card-detail">
+      <div class="price">
+        <p>${itemData.name}</p>
+        <p>${itemData.price}</p>
+      </div>
+      <div class="rating-add">
+        <div class="rating-box">
+          <div><img src="img/star.png" id="star"> ${itemData.rating}</div>
+          <div>${itemData.time}</div>
+        </div>
+        <div><img src="img/plus-symbol-in-a-rounded-black-square.png" id="addToCart" onclick="addToCart()"></div>
+      </div>
+    </div>
+  `;
+    sliderDiv.appendChild(card);
+  });
+}
 const slider = document.querySelector(".slider");
 const cardData = [
   {
@@ -376,37 +414,37 @@ const cardsPerFrame = Math.ceil(windowW / 600);
 
 console.log(window.innerWidth);
 
-function renderFrame() {
-  slider.innerHTML = "";
-  const endIndex = Math.min(currentCardIndex + cardsPerFrame, cardData.length);
+// function renderFrame() {
+//   slider.innerHTML = "";
+//   const endIndex = Math.min(currentCardIndex + cardsPerFrame, cardData.length);
 
-  for (let i = currentCardIndex; i < endIndex; i++) {
-    const card = document.createElement("div");
-    card.className = "card";
-    card.innerHTML = `
-            <div class="card-img-container">
+//   for (let i = currentCardIndex; i < endIndex; i++) {
+//     const card = document.createElement("div");
+//     card.className = "card";
+//     card.innerHTML = `
+//             <div class="card-img-container">
 
-                <img src="${cardData[i].image}" alt="${cardData[i].name}">
-            </div>
+//                 <img src="${itemData.image}" alt="${itemData.name}">
+//             </div>
 
-            <div class="product-card-detail">
+//             <div class="product-card-detail">
 
-                <div class="price">
-                    <p>${cardData[i].name}</p>
-                    <p>${cardData[i].price}</p>
-                </div>
-                <div class="rating-add">
-                    <div class="rating-box">
-                        <div><img src="img/star.png" id="star"> ${cardData[i].rating}</div>
-                        <div>${cardData[i].time}</div>
-                    </div>
-                    <div class="add" onclick="checkSize()"><img src="img/plus-symbol-in-a-rounded-black-square.png" id="addToCart" onclick="addToCart()"></div>
-                </div>
-            </div>
-        `;
-    slider.appendChild(card);
-  }
-}
+//                 <div class="price">
+//                     <p>${itemData.name}</p>
+//                     <p>${itemData.price}</p>
+//                 </div>
+//                 <div class="rating-add">
+//                     <div class="rating-box">
+//                         <div><img src="img/star.png" id="star"> ${cardData[i].rating}</div>
+//                         <div>${cardData[i].time}</div>
+//                     </div>
+//                     <div class="add" onclick="checkSize()"><img src="img/plus-symbol-in-a-rounded-black-square.png" id="addToCart" onclick="addToCart()"></div>
+//                 </div>
+//             </div>
+//         `;
+//     slider.appendChild(card);
+//   }
+// }
 
 // function renderFrame() {
 //   cardData.map((itemData,index) => {
@@ -437,20 +475,6 @@ function renderFrame() {
 //     slider.appendChild(card);
 //   }
 // }
-
-document.getElementById("left").addEventListener("click", () => {
-  if (currentCardIndex > 0) {
-    currentCardIndex--; // Slide one card left
-    renderFrame();
-  }
-});
-
-document.getElementById("right").addEventListener("click", () => {
-  if (currentCardIndex < cardData.length - cardsPerFrame) {
-    currentCardIndex++; // Slide one card right
-    renderFrame();
-  }
-});
 
 // Initial render
 renderFrame();

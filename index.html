@@ -14,7 +14,7 @@
     <script>
       window.onload = function () {
         renderCards();
-        renderFrame();
+        renderSlider();
       };
     </script>
 
@@ -138,13 +138,15 @@
             <div class="cards-home" id="frames-container"></div>
           </div>
         </div>
-        <div class="slider-container">
+        <div id="slider-container" class="slider-container">
           <p class="popular-item"><strong>Popular Items</strong></p>
           <div class="slider-wrapper">
             <span class="left-slide"
               ><img src="img/arrow (3).png" id="left" alt="Left Arrow"
             /></span>
-            <div class="slider"></div>
+
+            <div id="slider-content" class="slider-content"></div>
+
             <span class="right-slide"
               ><img src="img/arrow.png" id="right" alt="Right Arrow"
             /></span>
@@ -215,36 +217,43 @@
 
     <!-- Footer -->
     <footer class="outer-footer">
-      <div class="footer">
-        <a href="https://www.joshtechnologygroup.com/" target="_blank">
-          <img src="img/JTGeats.png" id="logo" alt="JTGeats Logo" />
-        </a>
-        <div class="nav-content">
-          <div class="menu-item">
-            <a href="/home" target="_blank"><span>Home</span></a>
-            <a href="/about" target="_blank"><span>About</span></a>
-            <a href="/menu" target="_blank"><span>Menu</span></a>
-            <a href="/blog" target="_blank"><span>Blog</span></a>
-            <a href="/contact" target="_blank"><span>Contact</span></a>
+      <nav class="footer">
+        <div class="inner-nav">
+          <!-- <div class="logo-container"> -->
+          <a href="https://www.joshtechnologygroup.com/" target="_blank">
+            <img src="img/JTGeats.png" id="logo" alt="JTGeats Logo" />
+          </a>
+          <!-- </div> -->
+          <div class="nav-content">
+            <div class="menu-item">
+              <a href="/home" target="_blank"><span>Home</span></a>
+              <a href="/about" target="_blank"><span>About</span></a>
+              <a href="/menu" target="_blank"><span>Menu</span></a>
+              <a href="/blog" target="_blank"><span>Blog</span></a>
+              <a href="/contact" target="_blank"><span>Contact</span></a>
+            </div>
           </div>
-          <div class="search-cartIcon">
-            <a href="https://www.facebook.com/" target="_blank">
-              <img
-                src="img/icons8-facebook.svg"
-                id="facebookIcon"
-                alt="Facebook Icon"
-              />
+          <div class="search-cartIcon" style="padding-left:10px ;">
+            <div class="cart-icon">
+             <a href="https://www.facebook.com" target="_blank">
+
+                 <img src="img/icons8-facebook.svg" id="searchIcon" alt="facebook Icon" />
+             </a> 
+            </div>
+
+            <div class="cart-icon">
+             <a href="https://www.instagram.com" target="_blank">
+
+                 <img
+                     src="img/icons8-instagram-logo.svg"
+                     id="searchIcon"
+                     alt="insta Icon"
+                   />
             </a>
-            <a href="https://www.instagram.com/" target="_blank">
-              <img
-                src="img/icons8-instagram-logo.svg"
-                id="instaIcon"
-                alt="Instagram Icon"
-              />
-            </a>
+            </div>
           </div>
         </div>
-      </div>
+      </nav>
     </footer>
 
     <script src="index.js"></script>
