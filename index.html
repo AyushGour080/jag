@@ -1,207 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JTGeats</title>
-    <link rel="stylesheet" href="index.css">
-    <!-- <link rel="stylesheet" href="mobile.css"> -->
-</head>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="mobile.css" />
 
-<body>
+    <!-- <link rel="stylesheet" href="mobile.css"> -->
+  </head>
+
+  <body>
     <script>
-        window.onload = function () {
-            renderCards();
-            renderFrame();
-        };
+      window.onload = function () {
+        renderCards();
+        renderFrame();
+      };
     </script>
 
     <!-- Cart Section -->
     <section>
-        <div class="cart" id="cart">
-            <div>
-                <img src="img/shopping-bag-2.png" alt="Shopping Bag">
-            </div>
-            <div class="cart-text">
-                <h1>Cart is Empty</h1>
-                <p style="color: lightgray; font-size: 23px;">Add some items to the cart to checkout</p>
-            </div>
-            
-            <button class="btn-backTo-menu" id="closeCart" onclick="closeCart()">Back to Menu</button>
+      <div class="cart" id="cart">
+        <div>
+          <img src="img/shopping-bag-2.png" alt="Shopping Bag" />
         </div>
+        <div class="cart-text">
+          <h1>Cart is Empty</h1>
+          <p style="color: lightgray; font-size: 23px">
+            Add some items to the cart to checkout
+          </p>
+        </div>
+
+        <button class="btn-backTo-menu" id="closeCart" onclick="closeCart()">
+          Back to Menu
+        </button>
+      </div>
     </section>
 
     <!-- Dish Request Section -->
     <section>
-        <div class="dish-request" id="dish">
-            <div>
-                <h1>Request a Dish</h1>
-
-            </div>
-            <div class="dish-request-input">
-
-                <div>
-                    <label for="name">Name<super>*</super></label><br>
-                    <input type="text" placeholder="Enter name of the dish" id="name">
-                </div>
-                <div>
-                    <label for="image">Upload an image</label><br>
-                    <input type="text" placeholder="Paste a URL" id="image">
-                </div>
-            </div>
-            <div class="dish-buttons">
-                <button class="btn-cancel" id="cancelDishRequest" onclick="cancel()">Cancel</button>
-                <button class="btn-submit" id="submitDishRequest" onclick="handleSubmit()">Submit Request</button>
-            </div>
+      <div class="dish-request" id="dish">
+        <div>
+          <h1>Request a Dish</h1>
         </div>
+        <div class="dish-request-input">
+          <div>
+            <label for="name">Name<super>*</super></label
+            ><br />
+            <input type="text" placeholder="Enter name of the dish" id="name" />
+          </div>
+          <div>
+            <label for="image">Upload an image</label><br />
+            <input type="text" placeholder="Paste a URL" id="image" />
+          </div>
+        </div>
+        <div class="dish-buttons">
+          <button class="btn-cancel" id="cancelDishRequest" onclick="cancel()">
+            Cancel
+          </button>
+          <button
+            class="btn-submit"
+            id="submitDishRequest"
+            onclick="handleSubmit()"
+          >
+            Submit Request
+          </button>
+        </div>
+      </div>
     </section>
 
     <!-- Header Section -->
     <header>
-        <nav class="navbar">
-            <div class="inner-nav">
-                <!-- <div class="logo-container"> -->
-                    <a href="https://www.joshtechnologygroup.com/" target="_blank">
-                        <img src="img/JTGeats.png" id="logo" alt="JTGeats Logo">
-                    </a>
-                <!-- </div> -->
-                <div class="nav-content">
-                    <div class="menu-item">
-                        <a href="/home" target="_blank"><span>Home</span></a>
-                        <a href="/about" target="_blank"><span>About</span></a>
-                        <a href="/menu" target="_blank"><span>Menu</span></a>
-                        <a href="/blog" target="_blank"><span>Blog</span></a>
-                        <a href="/contact" target="_blank"><span>Contact</span></a>
-                    </div>
-                    <div class="search-cartIcon">
-                            
-                           <a href="">
-
-                               <img src="img/loupe.png" id="searchIcon" alt="Search Icon">
-                           </a> 
-                            
-                          <a href="">
-                              <img src="img/newbag.png" id="bagIcon" onclick="openCart()" alt="Bag Icon">
-                               <!-- <img src="img/dot.png" id="dot" alt="Notification Dot"> -->
-
-                          </a> 
-                    </div>
-                </div>
+      <nav class="navbar">
+        <div class="inner-nav">
+          <!-- <div class="logo-container"> -->
+          <a href="https://www.joshtechnologygroup.com/" target="_blank">
+            <img src="img/JTGeats.png" id="logo" alt="JTGeats Logo" />
+          </a>
+          <!-- </div> -->
+          <div class="nav-content">
+            <div class="menu-item">
+              <a href="/home" target="_blank"><span>Home</span></a>
+              <a href="/about" target="_blank"><span>About</span></a>
+              <a href="/menu" target="_blank"><span>Menu</span></a>
+              <a href="/blog" target="_blank"><span>Blog</span></a>
+              <a href="/contact" target="_blank"><span>Contact</span></a>
             </div>
-        </nav>
+          </div>
+          <div class="search-cartIcon">
+            <div class="cart-icon">
+              <img src="img/loupe.png" id="searchIcon" alt="Search Icon" />
+            </div>
+
+            <div class="cart-icon">
+              <img
+                src="img/newbag.png"
+                id="searchIcon"
+                onclick="openCart()"
+                alt="Bag Icon"
+              />
+              <img src="img/dot.png" id="dot" alt="Notification Dot" />
+            </div>
+          </div>
+        </div>
+      </nav>
     </header>
 
     <!-- Landing Section -->
     <section class="landing-section">
-        <div class="hero-display">
-            <div class="display-text">
-                <p>Authentic Home <br>Food in India</p>
-                <p>JTGeats is a courier service delivering authentic home-cooked food to customers.</p>
-            </div>
-            <div class="search-input">
-                <input type="text" placeholder="Search food you love">
-                <div>Search</div>
-            </div>
+      <div class="hero-display">
+        <div class="display-text">
+          <p>Authentic Home <br />Food in India</p>
+          <p>
+            JTGeats is a courier service delivering authentic home-cooked food
+            to customers.
+          </p>
         </div>
-        <div class="cooking">
-            <img src="img/Screenshot 2025-01-18 at 1.26.22 PM.png" alt="Cooking Image">
+        <div class="search-input">
+          <input type="text" placeholder="Search food you love" />
+          <div>Search</div>
         </div>
+      </div>
+      <div class="cooking">
+        <img
+          src="img/Screenshot 2025-01-18 at 1.26.22 PM.png"
+          alt="Cooking Image"
+        />
+      </div>
     </section>
 
     <!-- Kitchen Section -->
     <section>
-        <div class="kitchen-section" id="kitchen-sec">
-            <div class="kitchen-cards">
-                <div class="filter-secon">
-                    <p><strong>Home Kitchen</strong></p>
-                    <div class="cards-home" id="frames-container"></div>
-                </div>
-            </div>
-            <div class="slider-container">
-                <p class="popular-item"><strong>Popular Items</strong></p>
-                <div class="slider-wrapper">
-                    <span class="left-slide"><img src="img/arrow (3).png" id="left" alt="Left Arrow"></span>
-                    <div class="slider"></div>
-                    <span class="right-slide"><img src="img/arrow.png" id="right" alt="Right Arrow"></span>
-                </div>
-            </div>
-            <div class="dish-btn-container">
-                <button class="btn" id="dishRequest" onclick="handleRequest()"><strong>Request a Dish</strong></button>
-            </div>
+      <div class="kitchen-section" id="kitchen-sec">
+        <div class="kitchen-cards">
+          <div class="filter-secon">
+            <p><strong>Home Kitchen</strong></p>
+            <div class="cards-home" id="frames-container"></div>
+          </div>
         </div>
+        <div class="slider-container">
+          <p class="popular-item"><strong>Popular Items</strong></p>
+          <div class="slider-wrapper">
+            <span class="left-slide"
+              ><img src="img/arrow (3).png" id="left" alt="Left Arrow"
+            /></span>
+            <div class="slider"></div>
+            <span class="right-slide"
+              ><img src="img/arrow.png" id="right" alt="Right Arrow"
+            /></span>
+          </div>
+        </div>
+        <div class="dish-btn-container">
+          <button class="btn" id="dishRequest" onclick="handleRequest()">
+            <strong>Request a Dish</strong>
+          </button>
+        </div>
+      </div>
     </section>
 
     <!-- Service Section -->
     <section>
-        <div class="service-section">
-            <div class="service-container">
-                <div class="heading-container">
-                    <h2>We provide the best<br>home-cooked food delivery service.</h2>
-                    <p>Away from home and craving homemade recipes?<br> Choose from our delicious home-cooked dishes.</p>
-                </div>
-                <div class="video-container">
-                    <video controls>
-                        <source src="img/WhatsApp Video 2025-01-19 at 00.46.46.mp4" type="video/mp4">
-                    </video>
-                </div>
-            </div>
-            <div class="background"></div>
+      <div class="service-section">
+        <div class="service-container">
+          <div class="heading-container">
+            <h2>We provide the best<br />home-cooked food delivery service.</h2>
+            <p>
+              Away from home and craving homemade recipes?<br />
+              Choose from our delicious home-cooked dishes.
+            </p>
+          </div>
+          <div class="video-container">
+            <video controls>
+              <source
+                src="img/WhatsApp Video 2025-01-19 at 00.46.46.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </div>
         </div>
+        <div class="background"></div>
+      </div>
     </section>
 
     <!-- Contact Us Section -->
     <section>
-        <div class="contactUs-container">
-            <div class="contact">
-                <div class="contact-form">
-                    <div class="form-text">
-                        <p>Do you have a question<br>or want to become a seller?</p>
-                        <p>Fill this form, and our manager will contact you within 48 hours.</p>
-                    </div>
-                    <div class="form-field">
-                        <div>
-                            <input type="text" placeholder="Your Name">
-                            <input type="email" placeholder="Your e-mail">
-                        </div>
-                        <textarea placeholder="Your message"></textarea>
-                        <button class="btn-submit-contact">Submit</button>
-                    </div>
-                </div>
-                <div class="delivery-icon">
-                    <img src="img/Food_delivery_cute_man_riding_motorcycles_cartoon_art_illustration 2.png" alt="Delivery Icon">
-                </div>
+      <div class="contactUs-container">
+        <div class="contact">
+          <div class="contact-form">
+            <div class="form-text">
+              <p>Do you have a question<br />or want to become a seller?</p>
+              <p>
+                Fill this form, and our manager will contact you within 48
+                hours.
+              </p>
             </div>
+            <div class="form-field">
+              <div>
+                <input type="text" placeholder="Your Name" />
+                <input type="email" placeholder="Your e-mail" />
+              </div>
+              <textarea placeholder="Your message"></textarea>
+              <button class="btn-submit-contact">Submit</button>
+            </div>
+          </div>
+          <div class="delivery-icon">
+            <img
+              src="img/Food_delivery_cute_man_riding_motorcycles_cartoon_art_illustration 2.png"
+              alt="Delivery Icon"
+            />
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="outer-footer">
-        <div class="footer">
-            <a href="https://www.joshtechnologygroup.com/" target="_blank">
-                <img src="img/JTGeats.png" id="logo" alt="JTGeats Logo">
+      <div class="footer">
+        <a href="https://www.joshtechnologygroup.com/" target="_blank">
+          <img src="img/JTGeats.png" id="logo" alt="JTGeats Logo" />
+        </a>
+        <div class="nav-content">
+          <div class="menu-item">
+            <a href="/home" target="_blank"><span>Home</span></a>
+            <a href="/about" target="_blank"><span>About</span></a>
+            <a href="/menu" target="_blank"><span>Menu</span></a>
+            <a href="/blog" target="_blank"><span>Blog</span></a>
+            <a href="/contact" target="_blank"><span>Contact</span></a>
+          </div>
+          <div class="search-cartIcon">
+            <a href="https://www.facebook.com/" target="_blank">
+              <img
+                src="img/icons8-facebook.svg"
+                id="facebookIcon"
+                alt="Facebook Icon"
+              />
             </a>
-            <div class="nav-content">
-                <div class="menu-item">
-                    <a href="/home" target="_blank"><span>Home</span></a>
-                    <a href="/about" target="_blank"><span>About</span></a>
-                    <a href="/menu" target="_blank"><span>Menu</span></a>
-                    <a href="/blog" target="_blank"><span>Blog</span></a>
-                    <a href="/contact" target="_blank"><span>Contact</span></a>
-                </div>
-                <div class="search-cartIcon">
-                    <a href="https://www.facebook.com/" target="_blank">
-                        <img src="img/icons8-facebook.svg" id="facebookIcon" alt="Facebook Icon">
-                    </a>
-                    <a href="https://www.instagram.com/" target="_blank">
-                        <img src="img/icons8-instagram-logo.svg" id="instaIcon" alt="Instagram Icon">
-                    </a>
-                </div>
-            </div>
+            <a href="https://www.instagram.com/" target="_blank">
+              <img
+                src="img/icons8-instagram-logo.svg"
+                id="instaIcon"
+                alt="Instagram Icon"
+              />
+            </a>
+          </div>
         </div>
+      </div>
     </footer>
 
     <script src="index.js"></script>
-</body>
-
+  </body>
 </html>

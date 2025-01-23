@@ -1,72 +1,48 @@
-
-
-document.getElementById('left').addEventListener('click', moveLeft);
-document.getElementById('right').addEventListener('click', moveRight);
-
-
+document.getElementById("left").addEventListener("click", moveLeft);
+document.getElementById("right").addEventListener("click", moveRight);
 
 let cartSize = 0;
 
-function checkCart(){
-
-  if(cartSize!=0)
-    {
-         cartSize+=1;
-    }
-    else{
-      
-    }
-
-
-
+function checkCart() {
+  if (cartSize != 0) {
+    cartSize += 1;
+  } else {
+  }
 }
 
-
-
-
 function openCart() {
-  if(document.getElementById("dish").style.display === "flex")
-      cancel();
-    
+  if (document.getElementById("dish").style.display === "flex") cancel();
+
   document.getElementById("cart").style.display = "flex";
   window.scrollTo(0, 0);
   document.body.classList.add("freeze-scroll");
 }
-function addToCart()
-{
-  
-}
-
+function addToCart() {}
 
 function closeCart() {
   document.getElementById("cart").style.display = "none";
   document.body.classList.remove("freeze-scroll");
-};
-
+}
 
 function cancel() {
   document.getElementById("dish").style.display = "none";
   document.body.classList.remove("freeze-scroll");
 }
 
-
-function handleSubmit()  {
+function handleSubmit() {
   document.getElementById("dish").style.display = "none";
   document.body.classList.remove("freeze-scroll");
 }
 
-
 function handleRequest() {
- 
-  if( document.getElementById("cart").style.display === "flex")
-    closeCart();
+  if (document.getElementById("cart").style.display === "flex") closeCart();
   document.getElementById("dish").style.display = "flex";
   window.scrollTo(0, 0);
   document.body.classList.add("freeze-scroll");
 }
 
 function changeImage() {
-  var image = document.getElementById('myImage');
+  var image = document.getElementById("myImage");
   if (image.src.match("bulbon")) {
     image.src = "pic_bulboff.gif";
   } else {
@@ -76,8 +52,7 @@ function changeImage() {
 
 // window.onload = function () {
 //   const framesContainer = document.getElementById("frames-container");
-  
-  
+
 //   // function for cards generation
 //   const cardData = [
 //     {
@@ -149,7 +124,7 @@ function changeImage() {
 //     for (let i = 0; i < 3; i++) {
 //       const frame = document.createElement("div");
 //       frame.className = "frame";
-  
+
 //       for (let j = 0; j < 3; j++) {
 //         const cardIndex = j % cardData.length;
 //         const card = document.createElement("div");
@@ -175,23 +150,22 @@ function changeImage() {
 //         </div>
 //       `;
 
-
 //   }
 // }
 
 //   }
 
-
-
-
-
 function createSliderFrame(startIndex) {
-  const sliderFrame = document.createElement('div');
-  sliderFrame.className = 'slider-frame';
+  const sliderFrame = document.createElement("div");
+  sliderFrame.className = "slider-frame";
 
-  for (let i = startIndex; i < startIndex + cardsPerFrame && i < cardData.length; i++) {
-    const card = document.createElement('div');
-    card.className = 'card';
+  for (
+    let i = startIndex;
+    i < startIndex + cardsPerFrame && i < cardData.length;
+    i++
+  ) {
+    const card = document.createElement("div");
+    card.className = "card";
     card.innerHTML = `
       <div class="card-img-container">
         <img src="${cardData[i].image}" alt="${cardData[i].name}">
@@ -215,8 +189,6 @@ function createSliderFrame(startIndex) {
   return sliderFrame;
 }
 
-
-
 function moveLeft() {
   if (currentFrame > 0) {
     currentFrame--;
@@ -231,69 +203,73 @@ function moveRight() {
   }
 }
 
-
-
-
-function renderCards () {
+function renderCards() {
   const framesContainer = document.getElementById("frames-container");
 
   console.log("asdfnlkamlk");
 
-  const cardData = [
-{
-name: "Home made pizza",
-price: "₹190",
-rating: 4.7,
-time: "50-90 min",
-image: "img/unsplash_MqT0asuoIcU.png",
-},
-{
-name: "Burger Deluxe",
-price: "₹150",
-rating: 4.5,
-time: "30-60 min",
-image: "img/unsplash_MqT0asuoIcU.png",
-},
-{
-name: "Pasta Carbonara",
-price: "₹210",
-rating: 4.8,
-time: "45-70 min",
-image: "img/unsplash_MqT0asuoIcU.png",
-},
-{
-name: "Vegan Salad",
-price: "₹130",
-rating: 4.2,
-time: "25-40 min",
-image: "img/unsplash_MqT0asuoIcU.png",
-},
-];
-
+  const cardList = [
+    {
+      name: "Home made pizza",
+      price: "₹190",
+      rating: 4.7,
+      discount: 0,
+      time: "50-90 min",
+      image: "img/unsplash_MqT0asuoIcU.png",
+    },
+    {
+      name: "Burger Deluxe",
+      price: "₹150",
+      rating: 4.5,
+      discount: 20,
+      time: "30-60 min",
+      image: "img/unsplash_MqT0asuoIcU.png",
+    },
+    {
+      name: "Pasta Carbonara",
+      price: "₹210",
+      rating: 4.8,
+      discount: 50,
+      time: "45-70 min",
+      image: "img/unsplash_MqT0asuoIcU.png",
+    },
+    {
+      name: "Vegan Salad",
+      price: "₹130",
+      rating: 4.2,
+      discount: 0,
+      time: "25-40 min",
+      image: "img/unsplash_MqT0asuoIcU.png",
+    },
+  ];
 
   // Generate 4 frames
 
-  for (let i = 0; i < 3; i++) {
-    const frame = document.createElement("div");
-    frame.className = "frame";
-
-    for (let j = 0; j < 4; j++) {
-      const cardIndex = j % cardData.length;
-      const card = document.createElement("div");
-      card.className = "card";
-      card.innerHTML = `
+  cardList.map((cardData, index) => {
+    console.log(cardData);
+    const card = document.createElement("div");
+    card.className = "card";
+    card.innerHTML = `
       <div class="card-img-container">
-        <img src="${cardData[cardIndex].image}" alt="${cardData[cardIndex].name}">
+        <img src="${cardData.image}" alt="${cardData.name}">
       </div>
+
+      ${
+        cardData.discount > 0
+          ? `<div class="discount" >
+                  <p > ${cardData.discount}%</p>
+                  </div>`
+          : ``
+      }
       <div class="product-card-detail">
         <div class="price">
-          <p>${cardData[cardIndex].name}</p>
-          <p>${cardData[cardIndex].price}</p>
+          <p>${cardData.name}</p>
+          <p>${cardData.price}</p>
         </div>
         <div class="rating-add">
               <div class="rating-box">
-               <div><img src="img/star.png" id="star"> ${cardData[cardIndex].rating}</div>
-               <div>${cardData[cardIndex].time}</div>
+               <div><img src="img/star.png" id="star"> ${cardData.rating}</div>
+               <div>${cardData.time}</div>
               </div>
           
           <div class="add"><img src="img/plus-symbol-in-a-rounded-black-square.png" id="addToCart" onclick="addToCart()"></div>
@@ -301,46 +277,120 @@ image: "img/unsplash_MqT0asuoIcU.png",
         </div>
       </div>
     `;
-      frame.appendChild(card);
-    }
-    framesContainer.appendChild(frame);
-  }
-    
- 
-   
-};
+    framesContainer.appendChild(card);
+  });
+}
 
-const slider = document.querySelector('.slider');
+const slider = document.querySelector(".slider");
 const cardData = [
-  { image: 'img/unsplash_MqT0asuoIcU.png', name: 'Home made pizza', price: '₹190', rating: '4.7', time: '50-79 min' },
-  { image: 'img/unsplash_MqT0asuoIcU.png', name: 'Tandoori Chicken', price: '₹184', rating: '4.3', time: '15-29 min' },
-  { image: 'img/unsplash_MqT0asuoIcU.png', name: 'Chilli Chicken', price: '₹116', rating: '4.1', time: '30-40 min' },
-  { image: 'img/unsplash_MqT0asuoIcU.png', name: 'Biryani', price: '₹220', rating: '4.5', time: '40-50 min' },
-  { image: 'img/unsplash_MqT0asuoIcU.png', name: 'Pasta', price: '₹150', rating: '4.2', time: '30-35 min' },
-  { image: 'img/unsplash_MqT0asuoIcU.png', name: 'Burger', price: '₹120', rating: '4.0', time: '20-30 min' },
-  { image: 'img/unsplash_MqT0asuoIcU.png', name: 'Chowmein', price: '₹100', rating: '4.3', time: '25-35 min' },
-  { image: 'img/unsplash_MqT0asuoIcU.png', name: 'Sandwich', price: '₹80', rating: '4.1', time: '10-20 min' },
-  { image: 'img/unsplash_MqT0asuoIcU.png', name: 'Cheese Pizza', price: '₹200', rating: '4.8', time: '40-50 min' },
-  { image: 'img/unsplash_MqT0asuoIcU.png', name: 'Grilled Chicken', price: '₹210', rating: '4.6', time: '35-45 min' },
-  { image: 'img/unsplash_MqT0asuoIcU.png', name: 'Spicy Chilli Chicken', price: '₹125', rating: '4.2', time: '30-40 min' },
-  { image: 'img/unsplash_MqT0asuoIcU.png', name: 'Chicken Biryani', price: '₹250', rating: '4.7', time: '50-60 min' }
+  {
+    image: "img/unsplash_MqT0asuoIcU.png",
+    name: "Home made pizza",
+    price: "₹190",
+    rating: "4.7",
+    time: "50-79 min",
+  },
+  {
+    image: "img/unsplash_MqT0asuoIcU.png",
+    name: "Tandoori Chicken",
+    price: "₹184",
+    rating: "4.3",
+    time: "15-29 min",
+  },
+  {
+    image: "img/unsplash_MqT0asuoIcU.png",
+    name: "Chilli Chicken",
+    price: "₹116",
+    rating: "4.1",
+    time: "30-40 min",
+  },
+  {
+    image: "img/unsplash_MqT0asuoIcU.png",
+    name: "Biryani",
+    price: "₹220",
+    rating: "4.5",
+    time: "40-50 min",
+  },
+  {
+    image: "img/unsplash_MqT0asuoIcU.png",
+    name: "Pasta",
+    price: "₹150",
+    rating: "4.2",
+    time: "30-35 min",
+  },
+  {
+    image: "img/unsplash_MqT0asuoIcU.png",
+    name: "Burger",
+    price: "₹120",
+    rating: "4.0",
+    time: "20-30 min",
+  },
+  {
+    image: "img/unsplash_MqT0asuoIcU.png",
+    name: "Chowmein",
+    price: "₹100",
+    rating: "4.3",
+    time: "25-35 min",
+  },
+  {
+    image: "img/unsplash_MqT0asuoIcU.png",
+    name: "Sandwich",
+    price: "₹80",
+    rating: "4.1",
+    time: "10-20 min",
+  },
+  {
+    image: "img/unsplash_MqT0asuoIcU.png",
+    name: "Cheese Pizza",
+    price: "₹200",
+    rating: "4.8",
+    time: "40-50 min",
+  },
+  {
+    image: "img/unsplash_MqT0asuoIcU.png",
+    name: "Grilled Chicken",
+    price: "₹210",
+    rating: "4.6",
+    time: "35-45 min",
+  },
+  {
+    image: "img/unsplash_MqT0asuoIcU.png",
+    name: "Spicy Chilli Chicken",
+    price: "₹125",
+    rating: "4.2",
+    time: "30-40 min",
+  },
+  {
+    image: "img/unsplash_MqT0asuoIcU.png",
+    name: "Chicken Biryani",
+    price: "₹250",
+    rating: "4.7",
+    time: "50-60 min",
+  },
 ];
 
-let currentCardIndex = 0; // Track the first visible card
-const cardsPerFrame = 3; // Display 3 cards at a time
+let currentCardIndex = 0;
+const windowW = window.innerWidth;
+const cardsPerFrame = Math.ceil(windowW / 600);
+// Display 3 cards at a time
+
+console.log(window.innerWidth);
 
 function renderFrame() {
-    slider.innerHTML = ''; // Clear existing frame
-    const endIndex = Math.min(currentCardIndex + cardsPerFrame, cardData.length);
+  slider.innerHTML = "";
+  const endIndex = Math.min(currentCardIndex + cardsPerFrame, cardData.length);
 
-    for (let i = currentCardIndex; i < endIndex; i++) {
-        const card = document.createElement('div');
-        card.className = 'card';
-        card.innerHTML = `
+  for (let i = currentCardIndex; i < endIndex; i++) {
+    const card = document.createElement("div");
+    card.className = "card";
+    card.innerHTML = `
             <div class="card-img-container">
+
                 <img src="${cardData[i].image}" alt="${cardData[i].name}">
             </div>
+
             <div class="product-card-detail">
+
                 <div class="price">
                     <p>${cardData[i].name}</p>
                     <p>${cardData[i].price}</p>
@@ -354,22 +404,52 @@ function renderFrame() {
                 </div>
             </div>
         `;
-        slider.appendChild(card);
-    }
+    slider.appendChild(card);
+  }
 }
 
-document.getElementById('left').addEventListener('click', () => {
-    if (currentCardIndex > 0) {
-        currentCardIndex--; // Slide one card left
-        renderFrame();
-    }
+// function renderFrame() {
+//   cardData.map((itemData,index) => {
+//     const card = document.createElement("div");
+
+//     card.className = "card";
+//     card.innerHTML = `
+//                 <div class="card-img-container">
+
+//                     <img src="${itemData.image}" alt="${itemData.name}">
+//                 </div>
+
+//                 <div class="product-card-detail">
+
+//                     <div class="price">
+//                         <p>${itemData.name}</p>
+//                         <p>${itemData.price}</p>
+//                     </div>
+//                     <div class="rating-add">
+//                         <div class="rating-box">
+//                             <div><img src="img/star.png" id="star"> ${itemData.rating}</div>
+//                             <div>${itemData.time}</div>
+//                         </div>
+//                         <div class="add" onclick="checkSize()"><img src="img/plus-symbol-in-a-rounded-black-square.png" id="addToCart" onclick="addToCart()"></div>
+//                     </div>
+//                 </div>
+//             `;
+//     slider.appendChild(card);
+//   }
+// }
+
+document.getElementById("left").addEventListener("click", () => {
+  if (currentCardIndex > 0) {
+    currentCardIndex--; // Slide one card left
+    renderFrame();
+  }
 });
 
-document.getElementById('right').addEventListener('click', () => {
-    if (currentCardIndex < cardData.length - cardsPerFrame) {
-        currentCardIndex++; // Slide one card right
-        renderFrame();
-    }
+document.getElementById("right").addEventListener("click", () => {
+  if (currentCardIndex < cardData.length - cardsPerFrame) {
+    currentCardIndex++; // Slide one card right
+    renderFrame();
+  }
 });
 
 // Initial render
