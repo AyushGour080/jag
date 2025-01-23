@@ -10,7 +10,8 @@ body {
   position: relative;
   max-width: 100vw;
   max-height: 100vh;
-  /* font-size: 1rem; */
+  font-size: 1rem;
+  position: relative;
 }
 html {
   font-size: 16px;
@@ -18,14 +19,13 @@ html {
 
 @media (max-width: 768px) {
   html {
-    font-size: 14px; /* Smaller font size for smaller screens */
+    font-size: 14px;
   }
 }
 
 @media (max-width: 480px) {
   html {
-    font-size: 12px; /* Even smaller for very small screens */
-  }
+    font-size: 12px; }
 }
 
 body.freeze-scroll {
@@ -42,13 +42,13 @@ section {
 }
 
 a {
-  text-decoration: none; /* Removes the underline */
-  color: inherit; /* Inherits text color from the parent */
-  background: none; /* Removes any background */
-  padding: 0; /* Removes padding */
-  margin: 0; /* Removes margin */
-  border: none; /* Removes any border */
-  outline: none; /* Removes outline on focus */
+  text-decoration: none; 
+  color: inherit; 
+  background: none; 
+  padding: 0; 
+  margin: 0; 
+  border: none; 
+  outline: none; 
 }
 
 /* header */
@@ -65,9 +65,9 @@ a {
   align-items: center;
 }
 #logo {
-  height: 60%;
+  height: 70%;
   cursor: pointer;
-  width: 70%;
+  width: 75%;
 }
 .logo-container {
   height: 60%;
@@ -112,8 +112,8 @@ a {
 }
 #searchIcon {
   cursor: pointer;
-  width: 60%;
-  height: 90%;
+  width: 40%;
+  /* height: 90%; */
 }
 
 .cart-icon {
@@ -124,40 +124,36 @@ a {
 
 #dot {
   position: absolute;
-  top: -40%;
-  right: 3px;
+  top: -50%;
+  right: 15px;
   z-index: 10;
-  width: 90%;
+  width: 80%;
+  cursor: pointer;
+
 }
 #bagIcon {
-  /* object-fit: fill; */
   z-index: 11;
   cursor: pointer;
-  width: 100%;
-  height: 100%;
+  width: 60%;
+  /* height: 90%; */
 }
-/* #dot {
-  position: absolute;
-  z-index: 12;
-  height: 120%;
-  width: 5%;
-  top: 0;
-  right: 0;
-} */
+
 
 .searchIcon-container {
   height: 100%;
   position: relative;
 
   width: 50%;
-  /* height: 100%; */
 }
 
 .cartIcon-container {
   width: 100%;
   height: 100%;
-  /* height: 100%; */
 }
+
+
+
+
 
 /* .landing-section */
 .landing-section {
@@ -166,7 +162,7 @@ a {
   background: #1ac073;
   display: flex;
   align-items: center;
-  padding: 5% 9%;
+  padding: 5.5% 9%;
 }
 .cooking {
   padding-top: 14%;
@@ -189,7 +185,7 @@ a {
 
 .display-text p:nth-of-type(1) {
   color: white;
-  font-size: 3.5rem;
+  font-size: 4rem;
   line-height: 100%;
   text-align: left;
   text-underline-position: from-font;
@@ -264,20 +260,13 @@ a {
 }
 
 .cards-home {
+  margin-top: 55px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 50px;
+  gap: 60px;
 }
 
-/* .kitchen-discount-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: var(--secondary-yellow);
-  padding: 0.7rem 0.3rem;
-  color: black;
-  font-weight: 400;
-} */
+
 .product-card-detail {
   border-radius: 5%;
   background: rgb(255, 255, 255);
@@ -285,7 +274,7 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
+padding: 10px 0px;}
 .price {
   display: flex;
   justify-content: space-between;
@@ -343,35 +332,7 @@ a {
   transform: scale(1.1);
 }
 
-.btn {
-  cursor: pointer;
-  border: none;
-  /* width: 100%; */
-  /* height: 100%; */
-  border-radius: 10%;
-  color: #ffffff;
-  background: #1ac073;
-}
 
-.btn-cancel {
-  width: 45%;
-  height: 100%;
-  border-radius: 7%;
-  color: #1ac073;
-  background: #ffffff;
-  border: 1px solid #22c679;
-}
-.btn-submit {
-  width: 45%;
-  height: 100%;
-  border-radius: 7%;
-  color: #ffff;
-  background: #22c679;
-  border: none;
-}
-.dish-buttons {
-  height: 10%;
-}
 
 .slider-container {
   box-sizing: border-box;
@@ -387,8 +348,10 @@ a {
 }
 
 .popular-item {
+  
   font-size: 2.5rem;
   margin-bottom: 2%;
+  margin-top: 70px;
 }
 
 .slider-wrapper {
@@ -400,14 +363,7 @@ a {
   justify-content: space-between;
   /* gap: 5%; */
 }
-/* .slider-content {
-  display: grid;
-  width: 80vw;
-  grid-template-columns: auto auto auto;
-  grid-template-rows: 0;
-  grid-gap: 10px;
-  flex: none;
-} */
+
 
 .slider-content::-webkit-scrollbar {
   display: none;
@@ -430,14 +386,14 @@ a {
 }
 
 .card {
-  border-radius: 10%;
+  border-radius: 10px;
   background-color: #fff;
   transition: transform 0.5s;
   position: relative;
   height: 100%;
 }
 .slider-card {
-  border-radius: 10%;
+  border-radius: 10px;
   background-color: #fff;
   transition: transform 0.5s;
   position: relative;
@@ -491,14 +447,9 @@ a {
 #addToCart {
   cursor: pointer;
 }
-.add {
-  width: 20%;
-}
 
-.add img:oncli {
-  content: url("img/play-sign (1).png");
-  transform: scale(1.1);
-}
+
+
 
 .left-slide img,
 .right-slide img {
@@ -533,6 +484,7 @@ span.left-slide {
   z-index: 2;
 }
 .video-container {
+  
   width: 80%;
   width: 100%;
   margin-top: 4%;
@@ -552,6 +504,11 @@ span.left-slide {
 .heading-container h2 {
   font-size: 2.5rem;
 }
+
+.heading-container p {
+  margin-top: 30px;
+}
+
 
 .background {
   background: #c7eacc;
@@ -573,7 +530,6 @@ span.left-slide {
 }
 
 .contact {
-  /* box-sizing: border-box; */
 
   width: 83%;
   display: flex;
@@ -584,11 +540,11 @@ span.left-slide {
 .contact-form {
   width: 60%;
 }
-.form-text {
-}
+
 .form-text p:nth-child(1) {
+  /* line-height: 80%; */
   font-size: 1.5rem;
-  line-height: 90%;
+  line-height: 100%;
 }
 .form-text p:nth-child(2) {
   margin-top: 1.75%;
@@ -610,64 +566,86 @@ span.left-slide {
 }
 .form-field textarea {
   margin-top: 4%;
-  padding-left: 4%;
+  padding: 4% 5%;
+
   width: 90%;
   outline: none;
   border: none;
-  border-radius: 5%;
+  border-radius: 5px;
   background: white;
-  line-height: 650%;
+  min-height: 100px;
+  /* line-height: 650%; */
 }
 .btn-submit-contact {
-  margin-top: 2%;
+  margin-top: 9%;
   padding: 2.5% 0%;
   background-color: #1ac073;
   color: white;
   border: none;
-  border-radius: 12%;
+  border-radius: 10px;
   font-size: 1.3rem;
   cursor: pointer;
-  width: 30%;
+  width: 35%;
 }
 .delivery-icon {
-  width: 90%;
-  height: 90%;
+  width: 50%;
+  /* height: 90%; */
 }
 .delivery-icon img {
   width: 100%;
   height: 100%;
 }
 
+
+
 /* footer */
 .outer-footer {
-  padding: 2% 0%;
+  padding: 3% 0%;
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+   align-items: center; 
   background: #1ac073;
 }
 .footer {
-  font-size: 1.1rem;
-  width: 80%;
+  margin: 0% 10%;
+  /* font-size: 1.4rem; */
+  width: 90%;
   border-bottom: 1px solid rgb(255, 255, 255);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  /* display: flex; */
+  /* justify-content: space-between;  */
 }
-#instaIcon {
+.footer-menu{
+  font-size:1.2rem ;
+}
+.footer-content{
+   width: 80%;
+}
+.insta-icon {
   width: 100%;
   height: 100%;
 }
-#facebookIcon {
+.fb-icon {
   width: 100%;
   height: 100%;
 }
+.insta-icon img{
+  width: 100%;
+  height: 100%;
+}
+.fb-icon img {
+  width: 100%;
+  height: 100%;
+}
+
+
+
 
 /* cart */
 .cart {
   margin: 5%;
   width: 90%;
-  height: 13%;
+  height: 70%;
   position: absolute;
   background: rgb(255, 255, 255);
   padding: 5% 0%;
@@ -677,6 +655,7 @@ span.left-slide {
   align-items: center;
   border-radius: 2%;
   z-index: 1000;
+  top:2px;
   display: none;
 }
 .cart-text {
@@ -706,20 +685,26 @@ h1 {
   border: none;
 }
 
+
+
+
+
 /* dish request */
 .dish-request {
   margin: 6%;
   width: 75%;
-  height: 11%;
+  height: 45%;
   position: absolute;
   background: rgb(255, 255, 255);
   padding: 7%;
+  padding-bottom: 10%;
   justify-content: space-between;
   display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 1%;
   z-index: 1000;
+  top: 1px;
   display: none;
 }
 
@@ -731,29 +716,33 @@ h1 {
   height: 100%;
 }
 .dish-request-input div {
-  /* padding-top: 5%; */
 
   width: 100%;
-  /* height: 100%; */
+  height: 25%;
 }
 .dish-request input {
   padding-left: 2%;
   width: 100%;
-  height: 80%;
+  height: 100%;
   outline: none;
   border: none;
   border-radius: 10px;
   background: whitesmoke;
 }
 
+.dish-request div:nth-child(1) {
+  width: 100%;
+  height: 30%;
+}
 .dish-request div:nth-child(2) {
   width: 100%;
-  height: 33%;
+  height: 30%;
 }
 
 .dish-request div:nth-child(3) {
   margin-top: 5%;
   width: 45%;
+  /* height: 100%; */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -774,4 +763,35 @@ h1 {
   margin-top: 7%;
   width: 15%;
   height: 35%;
+}
+
+
+.btn {
+  cursor: pointer;
+  border: none;
+  /* width: 100%; */
+  /* height: 100%; */
+  border-radius: 10px;
+  color: #ffffff;
+  background: #1ac073;
+}
+
+.btn-cancel {
+  width: 45%;
+  height: 100%;
+  border-radius: 10px;
+  color: #1ac073;
+  background: #ffffff;
+  border: 1px solid #22c679;
+}
+.btn-submit {
+  width: 45%;
+  height: 100%;
+  border-radius: 10px;
+  color: #ffff;
+  background: #22c679;
+  border: none;
+}
+.dish-buttons {
+  height: 10%;
 }

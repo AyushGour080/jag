@@ -10,6 +10,7 @@
     <!-- <link rel="stylesheet" href="mobile.css"> -->
   </head>
 
+
   <body>
     <script>
       window.onload = function () {
@@ -18,57 +19,7 @@
       };
     </script>
 
-    <!-- Cart Section -->
-    <section>
-      <div class="cart" id="cart">
-        <div>
-          <img src="img/shopping-bag-2.png" alt="Shopping Bag" />
-        </div>
-        <div class="cart-text">
-          <h1>Cart is Empty</h1>
-          <p style="color: lightgray; font-size: 23px">
-            Add some items to the cart to checkout
-          </p>
-        </div>
-
-        <button class="btn-backTo-menu" id="closeCart" onclick="closeCart()">
-          Back to Menu
-        </button>
-      </div>
-    </section>
-
-    <!-- Dish Request Section -->
-    <section>
-      <div class="dish-request" id="dish">
-        <div>
-          <h1>Request a Dish</h1>
-        </div>
-        <div class="dish-request-input">
-          <div>
-            <label for="name">Name<super>*</super></label
-            ><br />
-            <input type="text" placeholder="Enter name of the dish" id="name" />
-          </div>
-          <div>
-            <label for="image">Upload an image</label><br />
-            <input type="text" placeholder="Paste a URL" id="image" />
-          </div>
-        </div>
-        <div class="dish-buttons">
-          <button class="btn-cancel" id="cancelDishRequest" onclick="cancel()">
-            Cancel
-          </button>
-          <button
-            class="btn-submit"
-            id="submitDishRequest"
-            onclick="handleSubmit()"
-          >
-            Submit Request
-          </button>
-        </div>
-      </div>
-    </section>
-
+   
     <!-- Header Section -->
     <header>
       <nav class="navbar">
@@ -92,7 +43,7 @@
               <img src="img/loupe.png" id="searchIcon" alt="Search Icon" />
             </div>
 
-            <div class="cart-icon">
+            <div class="cart-icon"onclick="openCart()" >
               <img
                 src="img/newbag.png"
                 id="searchIcon"
@@ -174,10 +125,11 @@
           <div class="video-container">
             <video controls>
               <source
-                src="img/WhatsApp Video 2025-01-19 at 00.46.46.mp4"
+                src="img/video.mp4"
                 type="video/mp4"
               />
             </video>
+            
           </div>
         </div>
         <div class="background"></div>
@@ -224,8 +176,8 @@
             <img src="img/JTGeats.png" id="logo" alt="JTGeats Logo" />
           </a>
           <!-- </div> -->
-          <div class="nav-content">
-            <div class="menu-item">
+          <div class="nav-content footer-content">
+            <div class="menu-item footer-menu">
               <a href="/home" target="_blank"><span>Home</span></a>
               <a href="/about" target="_blank"><span>About</span></a>
               <a href="/menu" target="_blank"><span>Menu</span></a>
@@ -234,14 +186,14 @@
             </div>
           </div>
           <div class="search-cartIcon" style="padding-left:10px ;">
-            <div class="cart-icon">
+            <div class="fb-icon">
              <a href="https://www.facebook.com" target="_blank">
 
                  <img src="img/icons8-facebook.svg" id="searchIcon" alt="facebook Icon" />
              </a> 
             </div>
 
-            <div class="cart-icon">
+            <div class="insta-icon">
              <a href="https://www.instagram.com" target="_blank">
 
                  <img
@@ -256,6 +208,58 @@
       </nav>
     </footer>
 
+
+    <!-- Cart Section -->
+    <section>
+        <div class="cart" id="cart">
+          <div>
+            <img src="img/shopping-bag-2.png" alt="Shopping Bag" />
+          </div>
+          <div class="cart-text">
+            <h1>Cart is Empty</h1>
+            <p style="color: lightgray; font-size: 23px">
+              Add some items to the cart to checkout
+            </p>
+          </div>
+  
+          <button class="btn-backTo-menu" id="closeCart" onclick="closeCart()">
+            Back to Menu
+          </button>
+        </div>
+      </section>
+  
+       <!-- Dish Request Section -->
+    <section>
+        <div class="dish-request" id="dish">
+          <div>
+            <h1>Request a Dish</h1>
+          </div>
+          <div class="dish-request-input">
+            <div>
+              <label for="name">Name<super>*</super></label
+              ><br />
+              <input type="text" placeholder="Enter name of the dish" id="name" />
+            </div>
+            <div>
+              <label for="image">Upload an image</label><br />
+              <input type="text" placeholder="Paste a URL" id="image" />
+            </div>
+          </div>
+          <div class="dish-buttons">
+            <button class="btn-cancel" id="cancelDishRequest" onclick="cancel()">
+              Cancel
+            </button>
+            <button
+              class="btn-submit"
+              id="submitDishRequest"
+              onclick="handleSubmit()"
+            >
+              Submit Request
+            </button>
+          </div>
+        </div>
+      </section>
+  
     <script src="index.js"></script>
   </body>
 </html>
