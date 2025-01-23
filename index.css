@@ -6,19 +6,41 @@
 
 body {
   background: whitesmoke;
-  /* position: relative; */
+  box-sizing: border-box;
+  position: relative;
+  max-width:  100vw;
+  max-height: 100vh;
+  /* font-size: 1rem; */
+
 }
+html {
+  font-size: 16px; 
+}
+
+
+@media (max-width: 768px) {
+  html {
+    font-size: 14px; /* Smaller font size for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 12px; /* Even smaller for very small screens */
+  }
+}
+
 
 body.freeze-scroll {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   overflow: hidden;
 }
 
 section {
-  width: 100%;
+  width: 100vw;
   overflow: hidden;
 }
 
@@ -34,8 +56,9 @@ a {
 
 /* header */
 .navbar {
-  width: 100%;
-  height: 11%;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 7vh;
   background: #1ac073;
   display: flex;
   justify-content: center;
@@ -91,7 +114,7 @@ a {
 }
 #searchIcon {
   cursor: pointer;
-  width: 40%;
+  width: 60%;
   height: 90%;
   
 }
@@ -100,8 +123,8 @@ a {
   /* object-fit: fill; */
   z-index: 11;
   cursor: pointer;
-  width: 40%;
-  height: 50%;
+  width: 60%;
+  height: 70%;
 }
 #dot{
   position: absolute;
@@ -132,17 +155,18 @@ a {
 
 /* .landing-section */
 .landing-section {
-  width: 100%;
+  box-sizing: border-box;
+  /* width: 100vw; */
   background: #1ac073;
   display: flex;
   align-items: center;
-  padding: 3% 9%;
+  padding: 5% 9%;
 }
 .cooking {
   padding-top: 14%;
   padding-left: 4.6%;
-  width: 35%;
-  height: 35%;
+  width: 40%;
+  height: 40%;
 }
 .cooking img {
   width: 100%;
@@ -153,14 +177,14 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-top: 2%;
-  width: 40%;
+  padding-top: 3%;
+  width: 45%;
 }
 
 .display-text p:nth-of-type(1) {
   color: white;
-  font-size: 4rem;
-  line-height: 110%;
+  font-size: 3.5rem;
+  line-height: 100%;
   text-align: left;
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
@@ -206,7 +230,7 @@ a {
 
 /* kitchen */
 .kitchen-section {
-  width: 100%;
+  width: 100vw;
   height: 175%;
   display: flex;
   flex-direction: column;
@@ -236,7 +260,7 @@ a {
 
 .cards-home {
 
-  width: 82%;
+  width: 80vw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -245,12 +269,13 @@ a {
 }
 .frame {
 
-  width: 122%;
+  /* width: 122%; */
   margin: 2.5% 0%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-radius: 15%;
+  gap: 4%;
 }
 .card {
   border-radius: 25%;
@@ -367,11 +392,14 @@ a {
 }
 
 .slider-container {
+  box-sizing: border-box;
   margin-top: 4%;
   width: 85%;
   text-align: center;
   display: flex;
   flex-direction: column;
+  /* gap: 5%; */
+
   justify-content: space-between;
 }
 
@@ -381,15 +409,18 @@ a {
 }
 
 .slider-wrapper {
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  /* gap: 5%; */
 }
 
 .slider {
   display: flex;
   justify-content: space-between;
   width: 75%;
+  gap:5%;
 }
 
 .card {
@@ -405,7 +436,7 @@ a {
 
 .card-img-container img {
   position: relative;
-  width: 100%;
+   width: 100%; 
 }
 
 
@@ -504,6 +535,7 @@ span.left-slide {
 }
 
 .contactUs-container {
+  box-sizing: border-box;
   padding: 5% 0%;
   width: 100%;
   display: flex;
@@ -512,6 +544,8 @@ span.left-slide {
 }
 
 .contact {
+  /* box-sizing: border-box; */
+
   width: 83%;
   display: flex;
   align-items: center;
@@ -566,6 +600,14 @@ span.left-slide {
   font-size: 1.3rem;
   cursor: pointer;
   width: 30%;
+}
+.delivery-icon{
+  width: 90%;
+  height: 90%;
+}
+.delivery-icon img{
+  width: 100%;
+  height: 100%;
 }
 
 /* footer */
